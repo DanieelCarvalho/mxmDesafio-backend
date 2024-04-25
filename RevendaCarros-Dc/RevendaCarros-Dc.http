@@ -1,0 +1,6 @@
+@RevendaCarros_Dc_HostAddress = http://localhost:5076
+
+GET {{RevendaCarros_Dc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
