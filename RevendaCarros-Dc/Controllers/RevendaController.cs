@@ -11,7 +11,7 @@ namespace RevendaCarros_Dc.Controllers;
 
 
 [ApiController]
-[Route("/Revendas")]
+[Route("/revendas")]
 public class RevendaController : ControllerBase
 {
    private readonly IRevendaRepository _revendaRepository;
@@ -46,7 +46,7 @@ public class RevendaController : ControllerBase
         {
             if(criarAnuncio == null) 
             {
-                return BadRequest("Os dados do carro são invalidos");
+                return BadRequest(ModelState);
             }
 
         var newAnuncio = _mapper.Map<Carro>(criarAnuncio);
@@ -312,7 +312,7 @@ public class RevendaController : ControllerBase
                 dataTable.Rows.Add(
                     dado.Modelo,
                     dado.Ano,
-                    dado.Preco,
+                   dado.Preco,
                     dado.Portas,
                     dado.CriadoEm,
                     dado.AtualizadoEm
