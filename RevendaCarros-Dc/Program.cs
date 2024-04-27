@@ -42,13 +42,12 @@ namespace RevendaCarros_Dc
             var app = builder.Build();
 
            
-           // if (app.Environment.IsDevelopment())
-          //  {
-            //    app.UseSwagger();
-          //      app.UseSwaggerUI();
-         //   }
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+           
 
             app.UseHttpsRedirection();
 
@@ -56,6 +55,7 @@ namespace RevendaCarros_Dc
 
             app.UseAuthorization();
 
+            app.UseRouting();
 
             app.MapControllers();
           
