@@ -419,4 +419,4 @@ FodyWeavers.xsd
 *.msp
 
 # Arquivo appsettings.json
-/appsettings.json
+RevendaCarros-Dc/appsettings.json
