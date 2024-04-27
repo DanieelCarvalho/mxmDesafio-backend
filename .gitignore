@@ -13,6 +13,9 @@ dist-ssr
 *.local
 /package-lock.json
 
+# Arquivo appsettings.json
+/RevendaCarros-Dc/appsettings.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -418,5 +421,3 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-# Arquivo appsettings.json
-/RevendaCarros-Dc/appsettings.json
