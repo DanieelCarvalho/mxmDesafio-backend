@@ -5,6 +5,7 @@ namespace RevendaCarros_Dc.Domain.Dto;
 public class CriarAnuncioDto
 {
     [Required(ErrorMessage = "O Modelo é obrigatório.")]
+    [MaxLength(10)]
 
     public string Modelo { get; set; }
 
@@ -14,7 +15,7 @@ public class CriarAnuncioDto
     public int Ano { get; set; }
 
    [Required(ErrorMessage = "O preço é obrigatório.")]
-   [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser maior que zero.")]
+    [Range(0.01, 2000000, ErrorMessage = "O preço deve estar entre 0.01 e 2,000,000.")]
     public double Preco { get; set; }
    
 

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.AspNetCore.Mvc;
 using RevendaCarros_Dc.Domain.Context;
 using RevendaCarros_Dc.Domain.Dto;
@@ -186,6 +187,7 @@ public class RevendaController : ControllerBase
     {
 
         var dados = GetDados().Result;
+       
 
         using (XLWorkbook workbook = new XLWorkbook())
         {
@@ -304,6 +306,7 @@ public class RevendaController : ControllerBase
         dataTable.Columns.Add("AtualizadoEm", typeof(DateTime));
 
         var dados = await _revendaRepository.FindAll();
+        dados = dados.Where(t => t.EstaAtivo == true).ToList();
 
         if (dados != null)
         {

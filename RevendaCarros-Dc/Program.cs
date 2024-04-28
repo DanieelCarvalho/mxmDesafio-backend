@@ -51,9 +51,13 @@ namespace RevendaCarros_Dc
 
             app.UseHttpsRedirection();
 
-            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(options =>
+             options.WithOrigins("http://localhost:4200", "https://mxm-desafio-frontend.vercel.app")
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials());
 
-            app.UseCors(options => options.WithOrigins("https://mxm-desafio-frontend.vercel.app").AllowAnyMethod().AllowAnyHeader());
+
 
             app.UseAuthorization();
 
